@@ -1,0 +1,131 @@
+:root {
+    --primary-color: #3498db;
+    --secondary-color: #2c3e50;
+    --bg-color: #f9f9f9;
+    --bg-dark: #2c3e50;
+    --text-color: #333;
+    --text-light: #ecf0f1;
+    --button-bg: #3498db;
+    --button-text: #fff;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color);
+    transition: all 0.3s ease;
+}
+
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 5px;
+}
+
+header p {
+    font-size: 1em;
+    color: #666;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 5px;
+}
+
+/* Accordion Styling */
+.accordion-item {
+    margin-bottom: 10px;
+}
+
+.accordion-button {
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    padding: 10px;
+    border: none;
+    text-align: left;
+    width: 100%;
+    font-size: 1.1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.accordion-content {
+    padding: 10px;
+    background-color: var(--bg-color);
+    display: none;
+    border: 1px solid var(--secondary-color);
+}
+
+.accordion-item.active .accordion-content {
+    display: block;
+}
+
+footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #666;
+}
+
+footer a {
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+/* Dark Mode */
+body.dark-mode {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+}
+
+body.dark-mode .accordion-button {
+    background-color: var(--secondary-color);
+    color: var(--text-light);
+}
+
+body.dark-mode .accordion-content {
+    background-color: var(--bg-dark);
+    border: 1px solid var(--text-light);
+}
+
+body.dark-mode header p {
+    color: var(--text-light);
+}
+
+/* Mobile-first approach */
+@media (min-width: 768px) {
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+}
+
+/* Pseudo-elements */
+::selection {
+    background-color: var(--primary-color);
+    color: var(--button-text);
+}
